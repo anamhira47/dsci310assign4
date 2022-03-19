@@ -28,7 +28,7 @@ The R programming language (R Core Team, 2019) and the following R packages were
 
 # Results
 
-```{r figure-1, out.width=50, out.height=50, fig.cap= "Figure 1: Horse populations for all provinces in Canada from 1906 - 1972"
+```{r figure-1, echo=FALSE, out.width=50, out.height=50, fig.cap= "Figure 1: Horse populations for all provinces in Canada from 1906 - 1972"
 } 
 knitr::include_graphics("../../results/horse_pops_plot.png")
 ```
@@ -39,25 +39,25 @@ We can see from Figure 1 \@ref(fig:figure-1)  that Ontario, Saskatchewan and Alb
 
 Suppose we were interested in looking in more closely at the province with the highest spread (in terms of standard deviation) of horse populations. We present the standard deviations here:
 
-```{r}
+```{r table-1, echo=FALSE}
 horses_sd_table <- read_csv("../../results/horses_sd.csv")
 largest_sd <- horses_sd_table$Province[1]
-knitr::kable(horses_sd_table)
+knitr::kable(horses_sd_table, caption="Horse Standard Deviation")
 ```
 
 Note that we define standard deviation (of a sample) as
 
 $$s = sqrt( sum_{i = 1}^n(x_i - \bar{x}) / (n-1))$$
 
-Additionally, note that in Table 1 we consider the sample standard deviation of the number of horses during the same time span as Figure1.
+Additionally, note that in Table 1 \@ref(tab:table-1). we consider the sample standard deviation of the number of horses during the same time span as Figure1.
 
-```{r figure-2, out.width=50, out.height=50, fig.cap= "Figure 2: Horse populations for the province with the largest standard deviation"}
+```{r figure-2, echo=FALSE, out.width=50, out.height=50, fig.cap= "Figure 2: Horse populations for the province with the largest standard deviation"}
 knitr::include_graphics("../../results/horse_pop_plot_largest_sd.png")
 ```
 
 
 
-In Figure 2 \@ref(fig:figure-2) we zoom in and look at the province of ?, which had the largest spread of values in terms of standard deviation.
+In Figure 2 \@ref(fig:figure-2) we zoom in and look at the province of `r  largest_sd`, which had the largest spread of values in terms of standard deviation.
 
 # References
 
